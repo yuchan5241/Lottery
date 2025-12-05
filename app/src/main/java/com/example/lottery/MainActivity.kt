@@ -18,11 +18,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val btn_search = binding.startSearch
+        val btn_select = binding.startLottery
 
         btn_search.setOnClickListener {
             val intent = Intent(this, SearchLotteryNum::class.java)
             startActivity(intent)
         }
+        btn_select.setOnClickListener {
+            val intent = Intent(this, SelectNumActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 

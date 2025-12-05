@@ -13,8 +13,18 @@
         android:inputType="number"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
         />
 
+    <Button
+        android:id="@+id/return_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/search_bar"
+        app:layout_constraintBottom_toBottomOf="@id/search_bar"
+        android:layout_margin="10dp"
+        android:text="메인화면으로 돌아가기"
+        />
 
 
 
