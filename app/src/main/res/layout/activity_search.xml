@@ -68,4 +68,6 @@
         android:layout_marginBottom="30dp"
         android:text="전체 숫자 빈도 보기"
         />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
