@@ -2,6 +2,8 @@ package com.example.lottery
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lottery.databinding.ActivitySelectnumBinding
 
@@ -13,4 +15,11 @@ class SelectNumActivity : AppCompatActivity() {
         val binding : ActivitySelectnumBinding = ActivitySelectnumBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.option_menu, menu)
+        return true
+    }
+
 }
