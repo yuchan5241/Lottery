@@ -10,9 +10,14 @@ import com.example.lottery.databinding.ActivitySearchBinding
 class SearchLotteryNum : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         val binding: ActivitySearchBinding = ActivitySearchBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
+        val btn_back = binding.back
+
+        btn_back.setOnClickListener {
+
+            finish()
+        }
     }
 }
