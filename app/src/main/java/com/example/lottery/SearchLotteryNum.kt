@@ -8,9 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lottery.databinding.ActivityMainBinding
 import com.example.lottery.databinding.ActivitySearchBinding
+import org.jsoup.Jsoup
 
 class SearchLotteryNum : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+//        val LotterySite = "https://www.dhlottery.co.kr/lt645/result"
+//        val doc = Jsoup.connect(LotterySite).get()
+
         super.onCreate(savedInstanceState)
         val binding: ActivitySearchBinding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
