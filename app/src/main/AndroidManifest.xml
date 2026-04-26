@@ -12,7 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LOTTERY">
+        android:theme="@style/Theme.LOTTERY"
+        android:usesCleartextTraffic="true"
+        >
         <activity
             android:name=".SearchActivity"
             android:exported="false" />

@@ -5,8 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.parcel.Parcelize
 
-class AdapterClass(private val dataList: ArrayList<Num_Data_Class>): RecyclerView.Adapter<AdapterClass.ViewHolderClass>() {
+class AdapterClass(private val dataList: ArrayList<NumDataClass>): RecyclerView.Adapter<AdapterClass.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -14,11 +15,8 @@ class AdapterClass(private val dataList: ArrayList<Num_Data_Class>): RecyclerVie
     }
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-        val currnetItem = dataList[position]
-        holder.rvNum.text = currnetItem.dataNums
-
-
-
+        val item = dataList[position]
+        holder.setItem(item)
     }
 
     override fun getItemCount(): Int {
@@ -26,6 +24,15 @@ class AdapterClass(private val dataList: ArrayList<Num_Data_Class>): RecyclerVie
     }
 
     class ViewHolderClass(itemView: View): RecyclerView.ViewHolder(itemView){
-        val rvNum: TextView = itemView.findViewById(R.id.N_nums)
+
+        var lotteryNum: TextView = itemView.findViewById(R.id.lotteryNum)
+        fun setItem(item: NumDataClass){
+            lotteryNum.text = item.title + " " + item.num1 + " " + item.num2 + " " + item.num3 +
+                    " " + item.num4 + " " + item.num5 + " " + item.num6 + " " + item.bonusNum
+
+
+        }
+
+
     }
 }
