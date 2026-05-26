@@ -59,7 +59,7 @@ class SearchLotteryNum : AppCompatActivity() {
     //로또 사이트 크롤링
     suspend fun doTask() = withContext(Dispatchers.IO){
         var currentNumTitle: String = ""
-        val url = "https://www.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1216&_=1779764626158"
+        val url = "https://www.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1216" //srchCursorLtEpsd=0000 이 숫자로 회차별 로또번호 조회
         var itemList: ArrayList<NumDataClass> = arrayListOf()
         Single.fromCallable {
             try {
