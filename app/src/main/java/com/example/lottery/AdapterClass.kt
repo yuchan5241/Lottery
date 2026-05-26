@@ -27,11 +27,10 @@ class AdapterClass(private val dataList: ArrayList<NumDataClass>): RecyclerView.
 
         var lotteryNum: TextView = itemView.findViewById(R.id.lotteryNum)
         fun setItem(item: NumDataClass){
-            lotteryNum.text = item.title + " " + item.num1 + " " + item.num2 + " " + item.num3 +
+            lotteryNum.text = item.title + " " + item.num1
+            /* lotteryNum.text = item.title + " " + item.num1 + " " + item.num2 + " " + item.num3 +
                     " " + item.num4 + " " + item.num5 + " " + item.num6 + " " + item.bonusNum
-
-
-        }
+        */}
 
 
     }

@@ -2,6 +2,8 @@ package com.example.lottery
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -51,29 +53,23 @@ class SearchLotteryNum : AppCompatActivity() {
     fun doTask(url: String){
         var currentNumTitle: String = ""
         var itemList: ArrayList<NumDataClass> = arrayListOf()
-
         Single.fromCallable {
             try {
                 val doc = Jsoup.connect(url).get()
 
 
-                val elements: Elements = doc.select("class.result-ballBox")
-
-                run elemLoop@{
-                    elements.forEachIndexed { index, elem ->
-                        var num1 = elem.select("result-ball num-0n").text()
-                        var num2 = elem.select("result-ball num-1n").text()
+                val elements: Elements = doc.select(".content-tit")
+                Log.d("CRAWL_TEST", "1. 수집된 총 상자 개수: ${elements.size}")
+                var num1 = elements.text()
+                /*var num2 = elem.select("result-ball num-1n").text()
                         var num3 = elem.select("result-ball num-1n").text()
                         var num4 = elem.select("result-ball num-2n").text()
                         var num5 = elem.select("result-ball num-2n").text()
                         var num6 = elem.select("result-ball num-3n").text()
                         var bonusNum = elem.select("result-ball num-0n").text()
-
-                        var item = NumDataClass("1200", num1, num2, num3, num4, num5, num6, bonusNum)
-                        itemList.add(item)
-
-                    }
-                }
+                        */
+                var item = NumDataClass("1200", num1)
+                itemList.add(item)
 
             } catch (e: Exception) { e.printStackTrace() }
 
