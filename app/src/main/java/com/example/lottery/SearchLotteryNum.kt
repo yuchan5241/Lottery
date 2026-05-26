@@ -21,6 +21,7 @@ import org.json.JSONObject
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import java.lang.Exception
+import kotlin.reflect.typeOf
 
 class SearchLotteryNum : AppCompatActivity() {
 
@@ -68,8 +69,12 @@ class SearchLotteryNum : AppCompatActivity() {
                     .execute()
                     .body()
                 Log.d("CRAWL_API", "추출된 데이터: $doc")
-                val jsonObject = JSONObject(doc)
-                val num1 = jsonObject.getString("data")
+                val jsonObject = JSONObject(doc).getJSONObject("data")
+                val numPack = jsonObject.getJSONArray("list")
+                val numList : JSONObject = numPack[0] as JSONObject
+                Log.d("CRAWL_API", "추출된 데이터 num_pack: $numPack")
+                val num1 = numList.getString("tm1WnNo")
+                Log.d("CRAWL_API", "추출된 데이터: $num1")
 
 
                 /*var num2 = elem.select("result-ball num-1n").text()
